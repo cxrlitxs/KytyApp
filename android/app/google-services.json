@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492357122817",
+    "project_id": "kytycarlosc-46080",
+    "storage_bucket": "kytycarlosc-46080.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492357122817:android:b7c961c5266f4ec890f900",
+        "android_client_info": {
+          "package_name": "rf6.carloscastanedo.kyty.kytyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC405xELM2MqQe3ZghaaAe3Ek8FKR2p8B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

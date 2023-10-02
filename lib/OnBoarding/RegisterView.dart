@@ -50,7 +50,18 @@ class RegisterView extends StatelessWidget{
     _context=context;
 
     Column columna = Column(children: [
-      Text("Bienvenido al registro de Kyty",style: TextStyle(fontSize: 25)), ],);
+      Text("Bienvenido al registro de Kyty",style: TextStyle(fontSize: 25)),
+
+      Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
+        child: TextField(
+          controller: usernameController,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Escribe tu usuario',
+          ),
+        ),
+      ),
+    ],);
 
     AppBar appBar = AppBar(
       title: const Text('Register'),

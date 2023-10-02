@@ -14,7 +14,7 @@ class RegisterView extends StatelessWidget{
   TextEditingController tecRespass=TextEditingController();
 
   SnackBar snackBar = SnackBar(
-    content: Text('Yay! A SnackBar!'),
+    content: Text('Las contraseñas no coinciden'),
   );
 
   void onClickCancelar(){
@@ -56,7 +56,7 @@ class RegisterView extends StatelessWidget{
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
         child: KytyTextField(tecController: tecUsername,
-            sHint:'Escribe tu usuario'),
+            sHint:'Escribe tu correo'),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),

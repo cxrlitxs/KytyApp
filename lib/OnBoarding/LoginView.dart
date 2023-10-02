@@ -29,18 +29,18 @@ class LoginView extends StatelessWidget{
 
       String uid = FirebaseAuth.instance.currentUser!.uid;
       DocumentSnapshot<Map<String, dynamic>> datos = await db.collection(
-          "Usuarios").doc(uid).get();
+          "users").doc(uid).get();
       if (datos.exists) {
-        print("EL NOMBRE DEL USUARIO LOGEADO ES: " + datos.data()?["nombre"]);
+        print("EL NOMBRE DEL USUARIO LOGEADO ES: " + datos.data()?["name"]);
         print("LA EDAD DEL USUARIO LOGEADO ES: " +
-            datos.data()!["edad"].toString());
+            datos.data()!["age"].toString());
         print("LA ALTURA DEL USUARIO LOGEADO ES: " +
-            datos.data()!["altura"].toString());
+            datos.data()!["tall"].toString());
         Navigator.of(_context).popAndPushNamed("/homeview");
       }
 
       else {
-        Navigator.of(_context).popAndPushNamed("/perfilview");
+        Navigator.of(_context).popAndPushNamed("/profileview");
       }
     } on FirebaseAuthException catch (e) {
 
@@ -64,7 +64,7 @@ class LoginView extends StatelessWidget{
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
         child: KytyTextField(tecController: tecUsername,
-            sHint:'Escribe tu usuario'),
+            sHint:'Escribe tu correo'),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),

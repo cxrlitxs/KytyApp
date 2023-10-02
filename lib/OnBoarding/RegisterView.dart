@@ -9,16 +9,16 @@ class RegisterView extends StatelessWidget{
 
   late BuildContext _context;
 
-  TextEditingController usernameController=TextEditingController();
-  TextEditingController passwordController=TextEditingController();
-  TextEditingController respassController=TextEditingController();
+  TextEditingController tecUsername=TextEditingController();
+  TextEditingController tecPassword=TextEditingController();
+  TextEditingController tecRespass=TextEditingController();
 
   SnackBar snackBar = SnackBar(
     content: Text('Yay! A SnackBar!'),
   );
 
   void onClickCancelar(){
-    Navigator.of(_context).push("/loginview");
+    Navigator.of(_context).pushNamed("/loginview");
   }
   void onClickAceptar() async {
     //print("DEBUG>>>> "+usernameController.text);
@@ -29,7 +29,7 @@ class RegisterView extends StatelessWidget{
           password: passwordController.text,
         );
 
-        Navigator.of(_context).push("/loginview");
+        Navigator.of(_context).pushNamed("/loginview");
 
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {

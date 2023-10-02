@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:kytyapp/Main/HomeView.dart';
+//import 'package:kytyapp/Splash/SplashView.dart';
 import 'OnBoarding/LoginView.dart';
 import 'OnBoarding/RegisterView.dart';
+//import 'OnBoarding/PerfilView.dart';
 
 class KytyApp extends StatelessWidget{
   @override

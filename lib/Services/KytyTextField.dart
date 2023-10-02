@@ -1,4 +1,7 @@
-class KytyTextField extends StatelessWidget{
+import 'package:flutter/material.dart';
+
+
+class KytyTextField extends StatelessWidget {
 
   String sHint;
   TextEditingController tecController;
@@ -6,20 +9,21 @@ class KytyTextField extends StatelessWidget{
   double dPaddingH;
   double dPaddingV;
 
-  KTTextField({Key? key,this.sHint="",
+  KytyTextField({Key? key, this.sHint = "",
     required this.tecController,
-    this.blIsPassword=false,
-    this.dPaddingH=60,
-    this.dPaddingV=15
+    this.blIsPassword = false,
+    this.dPaddingH = 60,
+    this.dPaddingV = 15
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
 
-    return Padding(padding: EdgeInsets.symmetric(horizontal: dPaddingH, vertical: dPaddingV),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: dPaddingH, vertical: dPaddingV),
       child: Row(children: [
-        Image.asset("resources/logo_kyty2.png",width: 50, height: 50),
+        Image.asset("resources/img/logo_kyty2.png", width: 50, height: 50),
         Flexible(
           child: TextFormField(
               controller: tecController,
@@ -32,7 +36,7 @@ class KytyTextField extends StatelessWidget{
                 fillColor: Colors.greenAccent,
                 filled: true,
                 labelText: sHint,
-                suffixIcon:Icon(Icons.check_circle),
+                suffixIcon: Icon(Icons.check_circle),
                 prefixIcon: Icon(Icons.check_circle),
               )),
         ),
@@ -40,5 +44,5 @@ class KytyTextField extends StatelessWidget{
       ],
       ),
     );
-
+  }
 }

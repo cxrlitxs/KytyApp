@@ -12,7 +12,7 @@ class LoginView extends StatelessWidget{
   TextEditingController tecPassword=TextEditingController();
 
   void onClickRegistrar(){
-    Navigator.of(_context).push("/registerview");
+    Navigator.of(_context).pushNamed("/registerview");
   }
 
 

@@ -72,6 +72,17 @@ class RegisterView extends StatelessWidget{
           obscureText: true,
         ),
       ),
+
+      Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
+        child: TextFormField(
+          controller: respassController,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Repite tu contraseña',
+          ),
+          obscureText: true,
+        ),
+      ),
     ],);
 
     AppBar appBar = AppBar(

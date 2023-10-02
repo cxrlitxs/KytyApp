@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../Services/KytyTextField.dart';
 
 class RegisterView extends StatelessWidget{
 
@@ -16,7 +18,7 @@ class RegisterView extends StatelessWidget{
   );
 
   void onClickCancelar(){
-    Navigator.of(_context).pushNamed("/loginview");
+    Navigator.of(_context).push("/loginview");
   }
   void onClickAceptar() async {
     //print("DEBUG>>>> "+usernameController.text);
@@ -27,7 +29,7 @@ class RegisterView extends StatelessWidget{
           password: passwordController.text,
         );
 
-        Navigator.of(_context).pushNamed("/loginview");
+        Navigator.of(_context).push("/loginview");
 
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
@@ -53,18 +55,18 @@ class RegisterView extends StatelessWidget{
       Text("Bienvenido al registro de Kyty",style: TextStyle(fontSize: 25)),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecUsername,
+        child: KytyTextField(tecController: tecUsername,
             sHint:'Escribe tu usuario'),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecPassword,
+        child: KytyTextField(tecController: tecPassword,
           sHint:'Escribe tu contraseña',
           blIsPassword: true,),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecRespass,
+        child: KytyTextField(tecController: tecRespass,
           sHint:'Repite tu contraseña',
           blIsPassword: true,),
       ),

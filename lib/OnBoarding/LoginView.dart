@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../Services/KytyTextField.dart';
 
 class LoginView extends StatelessWidget{
 
@@ -11,7 +12,7 @@ class LoginView extends StatelessWidget{
   TextEditingController tecPassword=TextEditingController();
 
   void onClickRegistrar(){
-    Navigator.of(_context).pushNamed("/registerview");
+    Navigator.of(_context).push("/registerview");
   }
 
 
@@ -62,12 +63,12 @@ class LoginView extends StatelessWidget{
       Text("Bienvenido al login de Kyty",style: TextStyle(fontSize: 25)),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecUsername,
+        child: KytyTextField(tecController: tecUsername,
             sHint:'Escribe tu usuario'),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecPassword,
+        child: KytyTextField(tecController: tecPassword,
             sHint:'Escribe tu contraseña',
             blIsPassword: true),
       ),
@@ -89,7 +90,7 @@ class LoginView extends StatelessWidget{
       backgroundColor: Colors.greenAccent,
     );
 
-    Scaffold scaf=Scaffold(body: columna,
+    Scaffold scaf = Scaffold(body: columna,
       //backgroundColor: Colors.deepOrange,
       appBar: appBar,);
 

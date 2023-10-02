@@ -5,6 +5,7 @@ class LoginView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    _context=context;
 
     Column columna = Column(children: [
       Text("Bienvenido al login de Kyty",style: TextStyle(fontSize: 25)),

@@ -23,7 +23,7 @@ class KytyTextField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: dPaddingH, vertical: dPaddingV),
       child: Row(children: [
-        Image.asset("resources/img/logo_kyty2.png", width: 50, height: 50),
+        //Image.asset("resources/img/logo_kyty2.png", width: 50, height: 50),
         Flexible(
           child: TextFormField(
               controller: tecController,
@@ -37,7 +37,6 @@ class KytyTextField extends StatelessWidget {
                 filled: true,
                 labelText: sHint,
                 suffixIcon: Icon(Icons.check_circle),
-                prefixIcon: Icon(Icons.check_circle),
               )),
         ),
         //Image.network("https://media.tenor.com/zBc1XhcbTSoAAAAC/nyan-cat-rainbow.gif",width: 80, height:80),

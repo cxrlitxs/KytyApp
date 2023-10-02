@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../Services/KytyTextField.dart';
@@ -52,7 +53,6 @@ class LoginView extends StatelessWidget{
 
   }
 
-}
 
   @override
   Widget build(BuildContext context) {
@@ -97,3 +97,4 @@ class LoginView extends StatelessWidget{
     return scaf;
 
   }
+}

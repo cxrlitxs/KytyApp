@@ -87,6 +87,7 @@ class RegisterView extends StatelessWidget{
       Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(onPressed: onClickAceptar, child: Text("ACEPTAR"),),
+          TextButton( onPressed: onClickCancelar, child: Text("CANCELAR"),)
         ],)
 
 

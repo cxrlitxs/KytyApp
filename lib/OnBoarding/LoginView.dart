@@ -2,49 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    _context=context;
-
-    Column columna = Column(children: [
-      Text("Bienvenido al login de Kyty",style: TextStyle(fontSize: 25)),
-
-      Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecUsername,
-            sHint:'Escribe tu usuario'),
-      ),
-
-      Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: KTTextField(tecController: tecPassword,
-            sHint:'Escribe tu contraseña',
-            blIsPassword: true),
-      ),
-
-      Row(mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextButton(onPressed: onClickAceptar, child: Text("ACEPTAR"),),
-          TextButton( onPressed: onClickRegistrar, child: Text("REGISTRARSE"),)
-        ],)
-
-
-    ],);
-
-
-    AppBar appBar = AppBar(
-      title: const Text('Login'),
-      centerTitle: true,
-      shadowColor: Colors.pink,
-      backgroundColor: Colors.greenAccent,
-    );
-
-    Scaffold scaf=Scaffold(body: columna,
-      //backgroundColor: Colors.deepOrange,
-      appBar: appBar,);
-
-    return scaf;
-
-  }
 
   //Methods & Variables
 
@@ -95,3 +52,47 @@ class LoginView extends StatelessWidget{
   }
 
 }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    _context=context;
+
+    Column columna = Column(children: [
+      Text("Bienvenido al login de Kyty",style: TextStyle(fontSize: 25)),
+
+      Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
+        child: KTTextField(tecController: tecUsername,
+            sHint:'Escribe tu usuario'),
+      ),
+
+      Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
+        child: KTTextField(tecController: tecPassword,
+            sHint:'Escribe tu contraseña',
+            blIsPassword: true),
+      ),
+
+      Row(mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(onPressed: onClickAceptar, child: Text("ACEPTAR"),),
+          TextButton( onPressed: onClickRegistrar, child: Text("REGISTRARSE"),)
+        ],)
+
+
+    ],);
+
+
+    AppBar appBar = AppBar(
+      title: const Text('Login'),
+      centerTitle: true,
+      shadowColor: Colors.pink,
+      backgroundColor: Colors.greenAccent,
+    );
+
+    Scaffold scaf=Scaffold(body: columna,
+      //backgroundColor: Colors.deepOrange,
+      appBar: appBar,);
+
+    return scaf;
+
+  }

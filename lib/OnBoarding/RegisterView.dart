@@ -53,35 +53,20 @@ class RegisterView extends StatelessWidget{
       Text("Bienvenido al registro de Kyty",style: TextStyle(fontSize: 25)),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: TextField(
-          controller: usernameController,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Escribe tu usuario',
-          ),
-        ),
+        child: KTTextField(tecController: tecUsername,
+            sHint:'Escribe tu usuario'),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: TextFormField(
-          controller: passwordController,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Escribe tu contraseña',
-          ),
-          obscureText: true,
-        ),
+        child: KTTextField(tecController: tecPassword,
+          sHint:'Escribe tu contraseña',
+          blIsPassword: true,),
       ),
 
       Padding(padding: EdgeInsets.symmetric(horizontal: 60, vertical: 16),
-        child: TextFormField(
-          controller: respassController,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Repite tu contraseña',
-          ),
-          obscureText: true,
-        ),
+        child: KTTextField(tecController: tecRespass,
+          sHint:'Repite tu contraseña',
+          blIsPassword: true,),
       ),
 
       Row(mainAxisAlignment: MainAxisAlignment.center,

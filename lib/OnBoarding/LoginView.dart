@@ -58,6 +58,7 @@ class LoginView extends StatelessWidget{
 
   //Methods & Variables
 
+  FirebaseFirestore db = FirebaseFirestore.instance;
   late BuildContext _context;
   TextEditingController tecUsername=TextEditingController();
   TextEditingController tecPassword=TextEditingController();
@@ -74,11 +75,25 @@ class LoginView extends StatelessWidget{
           email: tecUsername.text,
           password: tecPassword.text
       );
+
       print("CORRECT LOGIN");
-      Navigator.of(_context).popAndPushNamed("/homeview");
 
+      String uid = FirebaseAuth.instance.currentUser!.uid;
+      DocumentSnapshot<Map<String, dynamic>> datos = await db.collection(
+          "Usuarios").doc(uid).get();
+      if (datos.exists) {
+        print("EL NOMBRE DEL USUARIO LOGEADO ES: " + datos.data()?["nombre"]);
+        print("LA EDAD DEL USUARIO LOGEADO ES: " +
+            datos.data()!["edad"].toString());
+        print("LA ALTURA DEL USUARIO LOGEADO ES: " +
+            datos.data()!["altura"].toString());
+        Navigator.of(_context).popAndPushNamed("/homeview");
+      }
+
+      else {
+        Navigator.of(_context).popAndPushNamed("/perfilview");
+      }
     } on FirebaseAuthException catch (e) {
-
 
       if (e.code == 'user-not-found') {
         print('No user found for that email.');

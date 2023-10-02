@@ -83,6 +83,13 @@ class RegisterView extends StatelessWidget{
           obscureText: true,
         ),
       ),
+
+      Row(mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(onPressed: onClickAceptar, child: Text("ACEPTAR"),),
+        ],)
+
+
     ],);
 
     AppBar appBar = AppBar(
